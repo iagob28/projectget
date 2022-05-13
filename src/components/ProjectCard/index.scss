@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 18rem;
+  width: 15rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.125rem solid rgb(207, 207, 207);
+  border-radius: 0.25rem;
+  justify-content: space-around;
+
+  header {
+    font-size: small;
+    font-weight: 700;
+    background: rgb(228, 185, 68);
+    color: rgb(141, 114, 41);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.125rem;
+  }
+
+  .project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  h1 {
+    font-size: medium;
+    font-weight: 700;
+  }
+
+  .project-budget {
+    display: flex;
+    flex-direction: column;
+    gap: 0.425rem;
+    text-align: justify;
+  }
+
+  h2 {
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: space-between;
+    width: 11rem;
+    strong {
+      align-items: flex-end;
+
+      font-weight: 700;
+    }
+  }
+
+  p {
+    font-size: smaller;
+    color: rgb(148, 148, 148);
+  }
+
+  .description {
+    height: 5rem;
+    overflow-y: hidden;
+    text-align: start;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    width: 15rem;
+    align-items: center;
+
+    .add-button {
+      width: 10rem;
+      background: rgb(230, 250, 253);
+      padding: 0.625rem;
+      font-size: small;
+      font-weight: 700;
+      color: rgb(204, 204, 204);
+      border-radius: 0.5rem;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        color: rgb(255, 255, 255);
+        background: rgb(96, 234, 255);
+      }
+    }
+
+    .love-button {
+      border-radius: 0.425rem;
+      padding: 0.4rem 0.625rem;
+      font-size: 1.125rem;
+      color: rgb(204, 204, 204);
+      background: rgb(253, 230, 243);
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        color: rgb(255, 255, 255);
+        background: rgb(223, 96, 255);
+      }
+    }
+
+    .active {
+      border-radius: 0.425rem;
+      padding: 0.4rem 0.625rem;
+      font-size: 1.125rem;
+      color: rgb(255, 255, 255);
+      background: rgb(223, 96, 255);
+    }
+  }
+}
