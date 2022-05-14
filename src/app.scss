@@ -1,0 +1,37 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .page-title {
+    font-size: large;
+    font-weight: 700;
+    color: rgb(32, 99, 110);
+    align-self: flex-start;
+    padding-left: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    width: calc(100vw - 5rem);
+    overflow-x: scroll;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      height: 0.375rem;
+      border-radius: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: #e1e1e1;
+        border-radius: 1rem;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: #fefefe;
+    }
+  }
+}
