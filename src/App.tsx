@@ -43,16 +43,6 @@ function App() {
     }
   }
 
-  const testeProject = {
-    pronac: "",
-    city: "",
-    uf: "",
-    resume: "",
-    name: "",
-    approvedValue: 0,
-    caughtValue: 0,
-  };
-
   useEffect(() => {
     async function getProjects() {
       await api
@@ -79,8 +69,6 @@ function App() {
     getProjects();
   }, [scroll]);
 
-  
-
   return (
     <>
       <div className="page-container">
@@ -88,36 +76,15 @@ function App() {
 
         <div className="showbox">
           <ul id="scroll-box">
-            {/* {projects.map((project: projectProps) => {
+            {projects.map((project: projectProps) => {
               return (
                 <li key={project.pronac}>
                   <ProjectCard project={project} />
                 </li>
               );
-            })} */}
-            <li>
-              <ProjectCard project={testeProject} />
-            </li>
-            <li>
-              <ProjectCard project={testeProject} />
-            </li>
-            <li>
-              <ProjectCard project={testeProject} />
-            </li>
-            <li>
-              <ProjectCard project={testeProject} />
-            </li>
-            <li>
-              <ProjectCard project={testeProject} />
-            </li>
-            <li>
-              <ProjectCard project={testeProject} />
-            </li>
-            <li>
-              <ProjectCard project={testeProject} />
-            </li>
+            })}
           </ul>
-          <span className="nav-buttons">       
+          <span className="nav-buttons">
             <button className="scroll-button" onClick={handleLeftButton}>
               {"<"}
             </button>
