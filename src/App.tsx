@@ -29,21 +29,6 @@ function App() {
 
   useEffect(() => {
     setScroll(document.getElementById("scroll-box"));
-  }, [scroll]);
-
-  async function handleRightButton() {
-    if (scroll) {
-      scroll.scrollLeft += 100;
-    }
-  }
-
-  async function handleLeftButton() {
-    if (scroll) {
-      scroll.scrollLeft -= 100;
-    }
-  }
-
-  useEffect(() => {
     async function getProjects() {
       await api
         .get("/projetos/?limit=10")
@@ -67,7 +52,19 @@ function App() {
     }
 
     getProjects();
-  }, [scroll]);
+  }, []);
+
+  function handleRightButton() {
+    if (scroll) {
+      scroll.scrollLeft += 100;
+    }
+  }
+
+  function handleLeftButton() {
+    if (scroll) {
+      scroll.scrollLeft -= 100;
+    }
+  }
 
   return (
     <>
