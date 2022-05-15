@@ -25,6 +25,33 @@ function App() {
       caughtValue: 0,
     },
   ]);
+  const [scroll, setScroll] = useState<HTMLElement | null>();
+
+  useEffect(() => {
+    setScroll(document.getElementById("scroll-box"));
+  }, [scroll]);
+
+  async function handleRightButton() {
+    if (scroll) {
+      scroll.scrollLeft += 100;
+    }
+  }
+
+  async function handleLeftButton() {
+    if (scroll) {
+      scroll.scrollLeft -= 100;
+    }
+  }
+
+  const testeProject = {
+    pronac: "",
+    city: "",
+    uf: "",
+    resume: "",
+    name: "",
+    approvedValue: 0,
+    caughtValue: 0,
+  };
 
   useEffect(() => {
     async function getProjects() {
@@ -50,7 +77,9 @@ function App() {
     }
 
     getProjects();
-  }, []);
+  }, [scroll]);
+
+  
 
   return (
     <>
@@ -58,15 +87,44 @@ function App() {
         <h1 className="page-title">Projetos do poponente</h1>
 
         <div className="showbox">
-          <ul>
-            {projects.map((project: projectProps) => {
+          <ul id="scroll-box">
+            {/* {projects.map((project: projectProps) => {
               return (
                 <li key={project.pronac}>
                   <ProjectCard project={project} />
                 </li>
               );
-            })}
+            })} */}
+            <li>
+              <ProjectCard project={testeProject} />
+            </li>
+            <li>
+              <ProjectCard project={testeProject} />
+            </li>
+            <li>
+              <ProjectCard project={testeProject} />
+            </li>
+            <li>
+              <ProjectCard project={testeProject} />
+            </li>
+            <li>
+              <ProjectCard project={testeProject} />
+            </li>
+            <li>
+              <ProjectCard project={testeProject} />
+            </li>
+            <li>
+              <ProjectCard project={testeProject} />
+            </li>
           </ul>
+          <span className="nav-buttons">       
+            <button className="scroll-button" onClick={handleLeftButton}>
+              {"<"}
+            </button>
+            <button className="scroll-button" onClick={handleRightButton}>
+              {">"}
+            </button>
+          </span>
         </div>
       </div>
     </>
